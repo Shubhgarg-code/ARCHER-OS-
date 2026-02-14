@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A.R.C.H.E.R OS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="activateScreen">
+    <h1>ACTIVATE A.R.C.H.E.R</h1>
+    <p>Click anywhere to start</p>
+</div>
+
+<div id="bootScreen">
+    <h1>A.R.C.H.E.R OS</h1>
+    <p id="bootText">Initializing...</p>
+    <div class="progress-container">
+        <div id="progressBar"></div>
+    </div>
+</div>
+
+<div id="alertOverlay">ALERT MODE</div>
+
+<div id="hud">
+
+    <div class="panel left">
+        <h3>POWER</h3>
+        <p>Energy: <span id="energyVal">100%</span></p>
+        <p>Heat: <span id="heatVal">0%</span></p>
+    </div>
+
+    <div class="panel right">
+        <h3>ARMOR</h3>
+        <p>Integrity: <span id="armorVal">95%</span></p>
+    </div>
+
+    <div class="panel bottom">
+        <h3>WEAPON</h3>
+        <p id="weaponName">Repulsor Beam</p>
+    </div>
+
+    <div class="core">
+        <div class="ring"></div>
+        <div class="ring inner"></div>
+        <span>CORE</span>
+    </div>
+
+    <div class="radar">
+        <div class="sweep"></div>
+    </div>
+
+    <div class="console">
+        <div id="consoleLog"></div>
+        <input id="commandInput" placeholder="Enter command..." />
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+body {
+    background: radial-gradient(circle, #020b14, #000);
+    color: #7df9ff;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* ACTIVATE */
+#activateScreen {
+    position: fixed;
+    inset: 0;
+    background: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* BOOT */
+#bootScreen {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: black;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.progress-container {
+    width: 300px;
+    height: 8px;
+    border: 1px solid #00eaff;
+}
+
+#progressBar {
+    height: 100%;
+    width: 0%;
+    background: #00eaff;
+}
+
+/* HUD */
+#hud {
+    display: none;
+    position: fixed;
+    inset: 0;
+    padding: 20px;
+}
+
+/* PANELS */
+.panel {
+    position: absolute;
+    border: 1px solid #00eaff;
+    padding: 12px;
+    background: rgba(0, 30, 40, 0.4);
+}
+
+.panel.left { top: 20px; left: 20px; }
+.panel.right { top: 20px; right: 20px; }
+.panel.bottom { bottom: 20px; left: 50%; transform: translateX(-50%); }
+
+/* CORE */
+.core {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 160px;
+    height: 160px;
+}
+
+.ring {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #00eaff;
+    border-radius: 50%;
+    animation: spin 6s linear infinite;
+}
+
+.ring.inner {
+    width: 70%;
+    height: 70%;
+    top: 15%;
+    left: 15%;
+    animation-direction: reverse;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* RADAR */
+.radar {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 1px solid #00eaff;
+    overflow: hidden;
+}
+
+.sweep {
+    width: 100%;
+    height: 100%;
+    background: conic-gradient(rgba(0,255,255,0.4), transparent);
+    animation: radar 2s linear infinite;
+}
+
+@keyframes radar {
+    from { transform: rotate(0); }
+    to { transform: rotate(360deg); }
+}
+
+/* CONSOLE */
+.console {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: 280px;
+    border: 1px solid #00eaff;
+    padding: 10px;
+    background: rgba(0,30,40,0.4);
+}
+
+#consoleLog {
+    height: 120px;
+    overflow-y: auto;
+    font-size: 12px;
+}
+
+#commandInput {
+    width: 100%;
+    background: black;
+    border: 1px solid #00eaff;
+    color: #7df9ff;
+    padding: 5px;
+}
+
+/* ALERT */
+#alertOverlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(255,0,0,0.15);
+    pointer-events: none;
+}
+
+/* EFFECTS */
+body.shake {
+    animation: shake 0.3s;
+}
+
+@keyframes shake {
+    0% { transform: translate(0); }
+    25% { transform: translate(5px); }
+    50% { transform: translate(-5px); }
+    75% { transform: translate(5px); }
+}

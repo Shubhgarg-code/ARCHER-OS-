@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../vs6"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "vs6"
+	}
+}
